@@ -1,7 +1,8 @@
-import { Sequelize } from "sequelize"
+import { sequelize } from "./dataBase.js";
 
 
-const sequelize = new Sequelize('postgres://neondb_owner:BnmYEOk19wDF@ep-floral-fog-a5kl51q1.us-east-2.aws.neon.tech/neondb?sslmode=require')
+
+
 
   
 export const connection = async()=>{
