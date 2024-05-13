@@ -30,5 +30,9 @@ export const Produto = sequelize.define("produtos", {
     type: DataTypes.DATE,
     allowNull: false,
     defaltValue: new Date(),
-  },
+  } 
+},{
+  timestamps: true, // Add this line to enable the default timestamp columns
+  createdAt: 'data_cadastro', // Map 'createdAt' to 'data_cadastro'
+  updatedAt: false // Disable 'updatedAt' column if you don't need it
 });
