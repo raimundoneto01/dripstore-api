@@ -1,5 +1,6 @@
 import express from "express"
 import { connection } from "./db/db.js"
+import { produtoRoute } from "./routes/produtosroutes.js"
 
 const app = express()
 
@@ -14,6 +15,8 @@ app.get('/', (req, res) => {
     status: 200
   })
 })
+
+produtoRoute(app)
 
 app.listen(PORT, () => {
   console.log(`O Servidor está rodando na porta http://${HOST}:${PORT}`)

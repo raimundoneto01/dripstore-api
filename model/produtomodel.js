@@ -1,35 +1,34 @@
+import { DataTypes, Sequelize } from "sequelize";
+import { sequelize } from "../db/dataBase.js";
 
-import { DataTypes } from "sequelize";
-import { connection } from "../db/db.js";
-
- const produto= connection.define('produtos', {
+export const Produto = sequelize.define("produtos", {
   nome: {
-    type: connection.Sequelize.STRING,
-    allowNull :false
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   descricao: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   desconto: {
     type: DataTypes.DECIMAL,
-    allowNull: false
+    allowNull: false,
   },
   preco: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
   },
   ativo: {
     type: DataTypes.BOOLEAN,
-    allowNull: true
+    allowNull: true,
   },
   categoria: {
     type: DataTypes.DECIMAL,
-    allowNull: false
+    allowNull: false,
   },
   data_cadastro: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaltValue: new Date()
-  }
- })
+    defaltValue: new Date(),
+  },
+});
