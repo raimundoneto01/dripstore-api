@@ -1,6 +1,7 @@
 import express from "express"
 import { connection } from "./db/db.js"
-import { produtoRoute } from "./routes/produtosroutes.js"
+import { produtoRoute } from "./routes/produtosroutes.js";
+
 
 const app = express()
 
