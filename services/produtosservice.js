@@ -1,7 +1,6 @@
+
 import { Produto} from '../model/produtomodel.js';
 import winston from 'winston';
-
-
 
 
 export const produtoService = {
@@ -18,6 +17,18 @@ export const produtoService = {
     }
     return res.status(200).json(produto)
   },
+  getAtivo: async (req, res)=>{
+    const ativo = req.params.ativo ==="true"? true : false;
+    const produto = await Produto.findAll(
+      {
+        where: {
+          ativo
+        }
+      }
+    );
+    return res.status(200).json(produto) 
+  
+  },
 
   create: async (req, res )=>{
     const produto = req.body;
@@ -27,6 +38,7 @@ export const produtoService = {
         message:"produto criado com sucesso"
       })
   },
+
   update: async (req, res)=>{
     const produto = req.body;
     const produtoBD = await Produto.update(
@@ -37,13 +49,26 @@ export const produtoService = {
         }
       }
     )
-   
     res.status(200).json({ 
       data: produtoBD ,
       message: "ProdutoAtualizado com sucesso"
       })
-   
+  },
+
+  delete: async (req, res)=>{
+    const id = req.params.id;
+    const produte = await Produto.destroy(
+      {
+        where: {
+          id: id
+        }
+      },
+    )
+
+    return res.status(200).json({
+      messege: `O Produto com o id: ${id}, foi deletado cm sucesso`
+    })
   }
- 
+  
   
 }
