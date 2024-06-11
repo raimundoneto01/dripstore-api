@@ -2,8 +2,7 @@ import { DataTypes, Sequelize } from "sequelize";
 import { sequelize } from "../db/dataBase.js";
 
 
-
-export const Produto = sequelize.define("produtos", {
+export const Perfil = sequelize.define("perfil", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -15,26 +14,12 @@ export const Produto = sequelize.define("produtos", {
     allowNull: false,
   
   },
-  descricao: {
+  codigo: {
     type: DataTypes.STRING,
     allowNull: false,
+    defaltValue: 1
   },
-  desconto: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-  },
-  preco: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  ativo: {
-    type: DataTypes.BOOLEAN,
-    allowNull: true,
-  },
-  categoria: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-  },
+  
   data_cadastro: {
     type: DataTypes.DATE,
     allowNull: false,

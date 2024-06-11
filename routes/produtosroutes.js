@@ -1,17 +1,17 @@
 import express from "express";
 import { produtoService } from "../services/produtosservice.js";
 
-export const produtoRoute = (app) => {
-  var route = express.Router();
+// export const produtoRoute = (app) => {
+const routeProduto = express.Router();
 
-  route.get("/", produtoService.getAll);
-  route.get("/:id", produtoService.getById);
-  route.get("/ativo/:ativo", produtoService.getAtivo);
-  route.post("/", produtoService.create);
-  route.put("/:id", produtoService.update);
-  route.delete("/:id", produtoService.delete);
-  
+routeProduto
+  .get("/", produtoService.getAll)
+  .get("/:id", produtoService.getById)
+  .post("/", produtoService.create);
+// route.get("/ativo/:ativo", produtoService.getAtivo);
+// route.put("/:id", produtoService.update);
+// route.delete("/:id", produtoService.delete);
 
-  
-  app.use("/api/produto", route);
-};
+export default routeProduto;
+// app.use("/api/produto", route);
+// };

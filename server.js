@@ -1,9 +1,14 @@
 import express from "express";
 import { connection } from "./db/db.js";
-import { produtoRoute } from "./routes/produtosroutes.js";
 import cors from 'cors'
+import { routes } from "./routes/index.js";
 
 const app = express();
+
+// converte o valor recebido via requisição
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const corsOptions={
   origin: "http://localhost:5173",
 };
@@ -15,9 +20,6 @@ const PORT = 5005;
 // configuração do sequelize com o banco....
 connection();
 
-// converte o valor recebido via requisição
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send({
@@ -26,7 +28,7 @@ app.get("/", (req, res) => {
   });
 });
 
-produtoRoute(app);
+routes(app);
 
 app.listen(PORT, () => {
   console.log(`O Servidor está rodando na porta http://${HOST}:${PORT}`);

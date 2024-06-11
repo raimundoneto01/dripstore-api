@@ -3,7 +3,7 @@ import { sequelize } from "../db/dataBase.js";
 
 
 
-export const Produto = sequelize.define("produtos", {
+export const Usuario = sequelize.define("usuario", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -15,30 +15,14 @@ export const Produto = sequelize.define("produtos", {
     allowNull: false,
   
   },
-  descricao: {
+  email: {
     type: DataTypes.STRING,
-    allowNull: false,
-  },
-  desconto: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-  },
-  preco: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  ativo: {
-    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  categoria: {
-    type: DataTypes.DECIMAL,
+  senha: {
+    type: DataTypes.TEXT,
     allowNull: false,
-  },
-  data_cadastro: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaltValue: new Date(),
+  
   } 
 },{
   timestamps: true, // Add this line to enable the default timestamp columns
