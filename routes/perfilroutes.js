@@ -12,9 +12,6 @@ import { perfilService } from "../services/perfilservice.js";
   route.get("/", perfilService.getAll);
   route.get("/:id", perfilService.getById);
   route.post("/", perfilService.create);
-  // route.get("/ativo/:ativo", produtoService.getAtivo);
-  // route.put("/:id", produtoService.update);
-  // route.delete("/:id", produtoService.delete);
   
    export default routePerfil;
 

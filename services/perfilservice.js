@@ -1,6 +1,5 @@
 
 import { Perfil} from '../model/perfil.js';
-import winston from 'winston';
 
 
 export const perfilService = {

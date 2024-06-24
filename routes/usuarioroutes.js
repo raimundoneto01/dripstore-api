@@ -13,9 +13,7 @@ import { usuarioService } from "../services/usuarioservice.js";
   route.get("/", usuarioService.getAll);
   route.get("/:id", usuarioService.getById);
   route.post("/", usuarioService.create);
-  // route.get("/ativo/:ativo", produtoService.getAtivo);
-  // route.put("/:id", produtoService.update);
-  // route.delete("/:id", produtoService.delete);
+  
   
    export default routeUsuario;
 

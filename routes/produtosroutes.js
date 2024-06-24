@@ -8,9 +8,7 @@ routeProduto
   .get("/", produtoService.getAll)
   .get("/:id", produtoService.getById)
   .post("/", produtoService.create);
-// route.get("/ativo/:ativo", produtoService.getAtivo);
-// route.put("/:id", produtoService.update);
-// route.delete("/:id", produtoService.delete);
+
 
 export default routeProduto;
 // app.use("/api/produto", route);

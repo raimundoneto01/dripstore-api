@@ -1,6 +1,5 @@
 
 import { Usuario} from '../model/usuariomodel.js';
-import winston from 'winston';
 
 
 export const usuarioService = {

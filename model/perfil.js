@@ -1,12 +1,10 @@
-import { DataTypes, Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
 import { sequelize } from "../db/dataBase.js";
-
 
 export const Perfil = sequelize.define("perfil", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    allowNull: false,
     autoIncrement: true
   },
   nome: {
@@ -28,5 +26,6 @@ export const Perfil = sequelize.define("perfil", {
 },{
   timestamps: true, // Add this line to enable the default timestamp columns
   createdAt: 'data_cadastro', // Map 'createdAt' to 'data_cadastro'
-  updatedAt: false // Disable 'updatedAt' column if you don't need it
+  updatedAt: false, // Disable 'updatedAt' column if you don't need it
+  tableName:'perfil'
 });
