@@ -1,7 +1,7 @@
-import { sequelize } from "../db/dataBase";
-import { Perfil } from "./perfil";
-import { Produto } from "./produtomodel";
-import { Usuario } from "./usuariomodel";
+import { sequelize } from "../db/dataBase.js";
+import { Perfil } from "./perfil.js";
+import { Produto } from "./produtomodel.js";
+import { Usuario } from "./usuariomodel.js";
 
 const bd = {};
 
