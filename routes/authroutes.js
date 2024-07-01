@@ -5,7 +5,7 @@ const authRoutes = express.Router();
 
 authRoutes
     .post('/cadastrar', authService.cadastrar)
-    // .post('/login', authService.login)
+    .post('/login', authService.login)
     // .post('/logar', authService.logar)
   
 export default authRoutes;
